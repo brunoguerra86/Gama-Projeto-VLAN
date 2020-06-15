@@ -22,7 +22,7 @@ public class Solicitacao {
 	@Column(name="numero")
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	private int numero;
+	private int numero; 
 	
 	@Column(name="dataSolicitacao")
 	@Temporal(TemporalType.DATE)

@@ -1,16 +1,28 @@
 <html>
     <head>
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+        <title>.: VLAN :.</title>
     </head>
+
     <body onload="preencherDeptos()">
         <div class="container">
-           <div class="row">
+            <div class="row">
                 <div class="col-md-12">
-                    <button class="btn btn-primary float-right" onclick="voltar()">Voltar</button>
+                    <h3> VLan Manager</h3>
                 </div>
             </div>
 
-            <h3 class="text-center">Nova Solicitação</h3>
+            <nav class="navbar navbar-expand-sm navbar-light; rounded " style="background-color: #454549;">
+                <ul class="navbar-nav mr-auto">
+                    <a class="nav-item nav-link active" style="color: aliceblue;" href="perfil.html">Perfil</a>
+                    <a class="nav-item nav-link" style="color: aliceblue;" href="departamentos.html">Departamentos</a>
+                    <a class="nav-item nav-link" style="color: aliceblue;" href="novasolicitacao.html">Nova Solicitação<span class="sr-only">(current)</span></a>
+                </ul>
+                <button class="btn btn-primary float-right" onclick="logout()">Logout</button>
+                <!-- Navbar content -->
+            </nav>
+
+            <div class="row" style="height: 10px"></div> <!-- espaco entre os campos -->
 
             <div class="row">
                 <div class="form-group col-md-4">

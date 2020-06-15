@@ -21,12 +21,12 @@ var templateSol = '<div class="row">' +
 
 var templateDetSol = '<div class="row">' +
                         '<div class="col-md-12">' + 
-                            '<p>Data : {{DATA}}</p>' +
-                            '<p>Departamento Origem : {{ORIGEM}}</p>' +
-                            '<p>Departamento Destino: {{DESTINO}}</p>' +
+                            '<p><strong>Data :</strong> {{DATA}}</p>' +
+                            '<p><strong>Departamento Origem :</strong> {{ORIGEM}}</p>' +
+                            '<p><strong>Departamento Destino:</strong> {{DESTINO}}</p>' +
                             '<br>'+
-                            '<p>Justificativa       : {{JUSTIFICATIVA}}</p>' +
-                            '<p>Comando             : {{COMANDO}}</p>' +
+                            '<p><strong>Justificativa       :</strong> {{JUSTIFICATIVA}}</p>' +
+                            '<p><strong>Comando             :</strong> {{COMANDO}}</p>' +
                         '</div>' +
                     '</div>';
 
@@ -59,7 +59,7 @@ function mostrarPerfil(){
     for (i=0; i<user.solicitacoes.length; i++){
         var solic = user.solicitacoes[i]; //apenas para simplificar
 
-        strSol = strSol + templateSol.replace("{{NUMSOL}}", solic.numero)
+        strSol = strSol + templateSol.replace("{{NUMSOL}}", i)
                                      .replace("{{ID}}", solic.numero)
                                      .replace("{{DATA}}", solic.dataSolicitacao)
                                      .replace("{{ORIGEM}}", solic.origem.nome)
@@ -72,17 +72,16 @@ function mostrarPerfil(){
 function recuperaDetalhe(sol){
     var userTxt = localStorage.getItem("userVlan");
     var user = JSON.parse(userTxt); //converti o texto para um objeto javascript
-
-    var solic = user.solicitacoes[sol-1];
-
-    console.log(solic.dataSolicitacao);
+    
+    var solic = user.solicitacoes;
+    //console.log(solic);
 
     var strDetSol;
-    strDetSol =  templateDetSol.replace("{{DATA}}", solic.dataSolicitacao)
-                                          .replace("{{ORIGEM}}", solic.origem.nome)
-                                          .replace("{{DESTINO}}", solic.destino.nome)
-                                          .replace("{{JUSTIFICATIVA}}", solic.justificativa)
-                                          .replace("{{COMANDO}}", solic.comandoRoteador);
+    strDetSol =  templateDetSol.replace("{{DATA}}", solic[sol].dataSolicitacao)
+                                          .replace("{{ORIGEM}}", solic[sol].origem.nome)
+                                          .replace("{{DESTINO}}", solic[sol].destino.nome)
+                                          .replace("{{JUSTIFICATIVA}}", solic[sol].justificativa)
+                                          .replace("{{COMANDO}}", solic[sol].comandoRoteador);
 
     
     document.getElementById("detalheSolicitacao").innerHTML = strDetSol;

@@ -1,22 +1,30 @@
 <html>
     <head>
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+        <title>.: VLAN :.</title>
     </head>
+
     <body onload="mostrarPerfil()">
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
-                    <h3 class="text-center">VLan Manager</h3>
+                    <h3> VLan Manager</h3>
                 </div>
             </div>
 
-            <div class="row">
-                <div class="col-md-12">
-                    <button class="btn btn-primary float-right" onclick="logout()">Logout</button>
-                </div>
-            </div>
+            <nav class="navbar navbar-expand-sm navbar-light; rounded " style="background-color: #454549;">
+                <ul class="navbar-nav mr-auto">
+                    <a class="nav-item nav-link active" style="color: aliceblue;" href="perfil.html">Perfil<span class="sr-only">(current)</span></a>
+                    <a class="nav-item nav-link" style="color: aliceblue;" href="departamentos.html">Departamentos</a>
+                    <a class="nav-item nav-link" style="color: aliceblue;" href="novasolicitacao.html">Nova Solicitação</a>
+                </ul>
+                <button class="btn btn-primary float-right" onclick="logout()">Logout</button>
+                <!-- Navbar content -->
+            </nav>
+            
+            <div class="row" style="height: 10px"></div> <!-- espaco entre os campos -->
 
-            <!-- aqui tem as informações do perfil do usuário -->
+            <!-- aqui tem as informações do perfil do usuário -->   
             <div class="row">
                 <div class="col-md-2" id="fotoUser">
                     
@@ -29,7 +37,7 @@
 
             <div class="row">
                 <div class="col-md-12">
-                    <a href="novasolicitacao.html" class="btn btn-primary">Nova Solicitação</a>
+                    <span class="d-block p-2 bg-dark text-white">Histórico de mudanças</span>
                 </div>
             </div>
 
